@@ -1,5 +1,5 @@
 function computerPlay(){
-    let computerSelection = Math.ceil(Math.random * 3);
+    let computerSelection = Math.ceil(Math.random() * 3);
 
     switch (computerSelection) {
         
