@@ -5,14 +5,17 @@ function computerPlay(){
         
         case 1: //rock
             console.log('Rock');
+            return "rock";
             break;
 
         case 2: //paper
             console.log('Paper');
+            return "paper";
             break;
 
         case 3: //scissors
             console.log('Scissors');
+            return "scissors";
             break;
 
         default:
