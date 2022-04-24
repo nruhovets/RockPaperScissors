@@ -23,3 +23,14 @@ function computerPlay(){
     }
 
 }
+
+function playerPlay(){
+    let playerSelection = prompt("Please enter rock, paper, or scissors.").toLowerCase();
+    if (playerSelection != "rock" && playerSelection != "paper" && playerSelection != "scissors")
+        {
+            alert("Selection was not understood. Please check spelling and try again.");
+            playerSelection = playerPlay();
+        }
+    console.log(playerSelection);
+    return playerSelection;
+}
