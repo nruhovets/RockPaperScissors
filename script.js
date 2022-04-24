@@ -26,11 +26,25 @@ function computerPlay(){
 
 function playerPlay(){
     let playerSelection = prompt("Please enter rock, paper, or scissors.").toLowerCase();
-    if (playerSelection != "rock" && playerSelection != "paper" && playerSelection != "scissors")
-        {
+    if (playerSelection != "rock" && playerSelection != "paper" && playerSelection != "scissors"){
             alert("Selection was not understood. Please check spelling and try again.");
             playerSelection = playerPlay();
         }
     console.log(playerSelection);
     return playerSelection;
+}
+
+function play(playerSelection, computerSelection){
+
+    if (playerSelection === computerSelection){
+        console.log("It's a tie!")
+    }
+    else if ((playerSelection === "rock" && computerSelection === "scissors")
+    ||(playerSelection === "scissors" && computerSelection === "paper")
+    ||(playerSelection === "paper" && computerSelection === "rock")){
+        console.log(`You win! ${playerSelection} beats ${computerSelection}`)
+    }
+    else{
+        console.log(`The computer wins :( ${computerSelection} beats ${playerSelection}`)
+    }
 }
