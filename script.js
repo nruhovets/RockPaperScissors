@@ -4,17 +4,17 @@ function computerPlay(){
     switch (computerSelection) {
         
         case 1: //rock
-            console.log('Rock');
+            console.log('computer picks rock');
             return "rock";
             break;
 
         case 2: //paper
-            console.log('Paper');
+            console.log('computer picks paper');
             return "paper";
             break;
 
         case 3: //scissors
-            console.log('Scissors');
+            console.log('computer picks scissors');
             return "scissors";
             break;
 
@@ -34,17 +34,41 @@ function playerPlay(){
     return playerSelection;
 }
 
-function play(playerSelection, computerSelection){
+function playRound(){
+    
+    let playerSelection = playerPlay();
+    let computerSelection = computerPlay();
 
     if (playerSelection === computerSelection){
         console.log("It's a tie!")
+        return 0;
     }
     else if ((playerSelection === "rock" && computerSelection === "scissors")
     ||(playerSelection === "scissors" && computerSelection === "paper")
     ||(playerSelection === "paper" && computerSelection === "rock")){
         console.log(`You win! ${playerSelection} beats ${computerSelection}`)
+        return 1;
+        
     }
     else{
         console.log(`The computer wins :( ${computerSelection} beats ${playerSelection}`)
+        return -1;
     }
+}
+
+function game(){
+    let playerWins = 0;
+    for (i=0; i<5; i++){
+        playerWins += playRound();
+    }
+    if (playerWins === 0){
+        console.log("The game is a tie!")
+    }
+    else if (playerWins > 0){
+        console.log(`You win the game!`)
+    }
+    else{
+        console.log(`You lose the game`)
+    }
+
 }
